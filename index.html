@@ -104,8 +104,34 @@ svg{display:block}
 @media(max-width:700px){.topbar{height:67px}.brandtext strong{font-size:13px}.brandtext span{font-size:7px}.search{display:none}.hero-inner{padding:40px 0}.hero h1{font-size:48px}.grid{grid-template-columns:1fr 1fr}.side{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.mini-search{width:100%}.footer-row{flex-direction:column;align-items:flex-start}.copyright{text-align:left}}
 @media(max-width:480px){.container{width:92%}.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.hero h2{font-size:14px;letter-spacing:2.5px}.main{padding-top:28px}}
 </style>
+<style>
+.schedule-modal{position:fixed;inset:0;background:rgba(4,18,34,.72);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+.schedule-modal.show{display:flex}
+.login-box{width:min(420px,100%);background:#fff;border-radius:20px;box-shadow:0 25px 80px #0008;padding:30px;position:relative;border:1px solid #e1e8ef}
+.login-logo{width:54px;height:54px;border-radius:15px;background:#fff4ea;color:#f47721;display:grid;place-items:center;font-size:25px;margin-bottom:16px}
+.login-box h3{margin:0;color:#102b49;font-size:23px}.login-box p{color:#667b91;font-size:12px;line-height:1.6;margin:7px 0 20px}
+.login-field{margin-bottom:13px}.login-field label{display:block;font-size:10px;font-weight:900;color:#263f5b;margin-bottom:6px}
+.login-field input{width:100%;height:43px;border:1px solid #d8e1ea;border-radius:10px;padding:0 12px;outline:none;font-size:12px}
+.login-field input:focus{border-color:#1477c9;box-shadow:0 0 0 3px #1477c918}
+.login-actions{display:flex;gap:9px;margin-top:18px}.login-btn{flex:1;height:43px;border:0;border-radius:10px;background:#f47721;color:#fff;font-weight:900;cursor:pointer}.login-cancel{height:43px;padding:0 18px;border:1px solid #d8e1ea;background:#fff;border-radius:10px;color:#526a81;font-weight:800;cursor:pointer}
+.login-error{display:none;color:#d63b3b;background:#fff0f0;border:1px solid #ffd1d1;border-radius:8px;padding:8px 10px;font-size:10px;margin-top:10px}
+</style>
 </head>
 <body>
+
+<div class="schedule-modal" id="scheduleModal" aria-hidden="true">
+ <div class="login-box" role="dialog" aria-modal="true" aria-labelledby="scheduleLoginTitle">
+  <div class="login-logo">🔐</div>
+  <h3 id="scheduleLoginTitle">Schedule Pendidikan</h3>
+  <p>Silakan masukkan username dan password untuk mengakses halaman Schedule Pendidikan.</p>
+  <form id="scheduleLoginForm">
+   <div class="login-field"><label for="scheduleUser">USERNAME</label><input id="scheduleUser" type="text" autocomplete="username" placeholder="Masukkan username" required></div>
+   <div class="login-field"><label for="schedulePass">PASSWORD</label><input id="schedulePass" type="password" autocomplete="current-password" placeholder="Masukkan password" required></div>
+   <div class="login-error" id="scheduleError">Username atau password salah.</div>
+   <div class="login-actions"><button type="button" class="login-cancel" id="scheduleCancel">Batal</button><button type="submit" class="login-btn">Masuk ke Schedule</button></div>
+  </form>
+ </div>
+</div>
 <!-- Icon library -->
 <svg width="0" height="0" style="position:absolute">
 <defs>
@@ -200,6 +226,7 @@ svg{display:block}
  </div>
 </footer>
 
+
 <script>
 const searchInputs=[document.getElementById('docSearch'),document.getElementById('topSearch')];
 const cards=[...document.querySelectorAll('.card')];
@@ -212,6 +239,44 @@ searchInputs.forEach(input=>input&&input.addEventListener('input',e=>{
  else document.getElementById('topSearch').value=e.target.value;
  filterCards(e.target.value);
 }));
+
+const scheduleModal=document.getElementById('scheduleModal');
+const scheduleForm=document.getElementById('scheduleLoginForm');
+const scheduleUser=document.getElementById('scheduleUser');
+const schedulePass=document.getElementById('schedulePass');
+const scheduleError=document.getElementById('scheduleError');
+const scheduleCancel=document.getElementById('scheduleCancel');
+let scheduleTarget='schedule.html';
+
+function openScheduleLogin(event){
+ if(event) event.preventDefault();
+ scheduleTarget='schedule.html';
+ scheduleError.style.display='none';
+ scheduleUser.value='';
+ schedulePass.value='';
+ scheduleModal.classList.add('show');
+ scheduleModal.setAttribute('aria-hidden','false');
+ setTimeout(()=>scheduleUser.focus(),80);
+}
+document.querySelectorAll('a[href="schedule.html"]').forEach(link=>link.addEventListener('click',openScheduleLogin));
+scheduleCancel.addEventListener('click',()=>{
+ scheduleModal.classList.remove('show');
+ scheduleModal.setAttribute('aria-hidden','true');
+});
+scheduleModal.addEventListener('click',e=>{if(e.target===scheduleModal)scheduleCancel.click()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&scheduleModal.classList.contains('show'))scheduleCancel.click()});
+
+scheduleForm.addEventListener('submit',e=>{
+ e.preventDefault();
+ if(scheduleUser.value.trim()==='Maintenance' && schedulePass.value==='12345'){
+   sessionStorage.setItem('scheduleAccess','granted');
+   window.location.href=scheduleTarget;
+ }else{
+   scheduleError.style.display='block';
+   schedulePass.value='';
+   schedulePass.focus();
+ }
+});
 </script>
 </body>
 </html>
