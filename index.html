@@ -3,40 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAINTENANCE DOJO | UNIVANCE DOCUMENT CENTER</title>
+<meta name="theme-color" content="#071f3a">
+<meta name="description" content="Maintenance Dojo - Univance Document Center">
+<title>Maintenance Dojo | PT. Univance Indonesia</title>
 <style>
-:root{--navy:#06294d;--blue:#075da8;--orange:#f47721;--gold:#ffb400;--ink:#10243d;--muted:#62748a;--bg:#eef3f7;--white:#fff}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
-.top{background:#fff;border-bottom:1px solid #dfe6ee;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:14px}.logo{width:58px;height:58px;border-radius:12px;background:linear-gradient(145deg,#f47721,#ffb400);display:grid;place-items:center;color:#fff;font-weight:900;font-size:30px;box-shadow:0 7px 20px #f4772140}.brand b{display:block;font-size:18px;letter-spacing:.5px}.brand span{font-size:11px;font-weight:800;color:#6b7b8f;letter-spacing:1.4px}.nav{font-size:11px;font-weight:900;letter-spacing:1.4px;color:#34506d}
-.hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#05284b 0%,#075da8 58%,#0b365c 100%);color:#fff;padding:62px 6% 55px}.hero:after{content:"";position:absolute;width:420px;height:420px;border:70px solid #ffffff12;border-radius:50%;right:-130px;top:-160px}.hero h1{font-size:clamp(34px,5vw,64px);margin:0 0 7px;font-weight:900;letter-spacing:1px}.hero h2{margin:0;color:#ffd38b;font-size:clamp(16px,2vw,24px);letter-spacing:4px}.hero p{max-width:700px;color:#e5eff8;font-size:16px;line-height:1.7;margin:20px 0 25px}.pill{display:inline-block;background:#ffffff16;border:1px solid #ffffff35;padding:9px 14px;border-radius:99px;font-size:11px;font-weight:900;letter-spacing:1.3px;margin:0 7px 7px 0}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.4fr .8fr;gap:40px;align-items:center;max-width:1200px;margin:auto}
-.qrbox{background:#fff;color:var(--ink);border-radius:22px;padding:25px;text-align:center;box-shadow:0 20px 50px #001b333d}.qrbox .fakeqr{width:150px;height:150px;margin:5px auto 16px;background:repeating-linear-gradient(0deg,#111 0 5px,#fff 5px 10px),repeating-linear-gradient(90deg,transparent 0 5px,#111 5px 10px);mix-blend-mode:multiply;opacity:.9;border:10px solid #fff;box-shadow:0 0 0 1px #d5dce5}.qrbox b{display:block;font-size:16px}.qrbox small{display:block;color:#708096;margin-top:6px;line-height:1.5}
-.wrap{max-width:1200px;margin:0 auto;padding:42px 5% 60px}.section-title{text-align:center;margin-bottom:28px}.section-title h3{margin:0;font-size:28px}.section-title p{margin:8px 0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #dde5ed;border-radius:18px;padding:24px;min-height:190px;display:flex;flex-direction:column;transition:.2s;box-shadow:0 7px 25px #173a5710}.card:hover{transform:translateY(-4px);box-shadow:0 14px 35px #173a5720}.icon{width:48px;height:48px;border-radius:13px;background:#eef6ff;color:var(--blue);display:grid;place-items:center;font-size:23px;margin-bottom:16px}.card h4{margin:0 0 8px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.btn{margin-top:auto;padding-top:18px;color:var(--blue);font-weight:900;font-size:12px;text-decoration:none;letter-spacing:.6px}.btn:after{content:"  →"}.notice{margin-top:28px;background:#fff7e9;border:1px solid #ffd58b;border-radius:15px;padding:15px 18px;font-size:12px;color:#795313}.foot{background:#06294d;color:#cbd9e7;padding:25px 5%;text-align:center;font-size:11px;line-height:1.7}.foot b{color:#fff}.tag{color:#ffb400;font-weight:900}
-@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.nav{display:none}}@media(max-width:520px){.grid{grid-template-columns:1fr}.top{padding:12px 4%}.hero{padding:42px 5%}.hero h1{font-size:38px}.wrap{padding-left:4%;padding-right:4%}}
+:root{
+ --navy:#071f3a;--navy2:#0b3156;--orange:#f47721;--orange2:#ff9a2e;
+ --blue:#1477c9;--cyan:#0ca7c8;--green:#14a889;--purple:#7052df;
+ --ink:#102b49;--muted:#667b91;--line:#dfe7ef;--soft:#f5f8fb;--white:#fff;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#f3f6f9}
+a{text-decoration:none;color:inherit}
+svg{display:block}
+.container{width:min(1380px,92%);margin:auto}
+
+/* HEADER */
+.topbar{height:78px;background:#fff;border-bottom:1px solid #e5ebf1;display:flex;align-items:center;position:sticky;top:0;z-index:20}
+.navrow{display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:10px}
+.brandmark{width:42px;height:42px;color:var(--orange)}
+.brandtext strong{display:block;font-size:16px;letter-spacing:.4px;color:#102d4d}
+.brandtext span{display:block;font-size:9px;font-style:italic;font-weight:700;color:#50647a;margin-top:2px}
+.navlinks{display:flex;align-items:center;gap:5px}
+.navlinks a{padding:11px 13px;border-radius:9px;font-size:12px;font-weight:800;color:#263f5b}
+.navlinks a.active,.navlinks a:hover{background:#fff4ea;color:var(--orange)}
+.search{margin-left:auto;width:255px;height:39px;border:1px solid #d8e1ea;border-radius:22px;display:flex;align-items:center;padding:0 13px;gap:8px;color:#789}
+.search input{border:0;outline:0;width:100%;font-size:11px;background:transparent}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 82% 18%,#f99a2b55 0 2%,transparent 20%),
+ linear-gradient(118deg,#061d35 0%,#092d4e 52%,#0b4770 100%);color:#fff}
+.hero:before{content:"";position:absolute;inset:0;opacity:.14;background:
+ linear-gradient(90deg,transparent 0 68%,#fff 68.2% 68.5%,transparent 68.7%),
+ linear-gradient(0deg,transparent 0 82%,#fff 82.2% 82.5%,transparent 82.7%),
+ repeating-linear-gradient(90deg,transparent 0 70px,#fff 71px 72px,transparent 73px 145px);
+ transform:skewX(-10deg) scale(1.2);transform-origin:right top}
+.hero:after{content:"";position:absolute;right:-130px;bottom:-240px;width:560px;height:560px;border:95px solid #ffffff12;border-radius:50%}
+.hero-inner{min-height:350px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center;position:relative;z-index:2;padding:52px 0}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:900;letter-spacing:1.8px;color:#ffd19d;background:#ffffff12;border:1px solid #ffffff22;border-radius:20px;padding:8px 12px}
+.hero h1{font-size:clamp(40px,5.4vw,72px);line-height:.9;margin:16px 0 8px;font-weight:950;letter-spacing:-2px}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero h2{font-size:20px;letter-spacing:4px;margin:0;color:#fff;font-weight:800}
+.hero p{max-width:670px;color:#d7e6f3;font-size:14px;line-height:1.75;margin:18px 0 20px}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:900;color:#fff}
+.badge i{width:25px;height:25px;border:1px solid #ff8b34;border-radius:50%;display:grid;place-items:center;color:#ff8b34;font-style:normal}
+.hero-art{height:265px;position:relative;display:flex;align-items:center;justify-content:center}
+.machine{width:315px;height:185px;border:2px solid #ffffff30;border-radius:14px;background:linear-gradient(180deg,#ffffff12,#ffffff05);box-shadow:0 25px 60px #0005;position:relative}
+.machine:before{content:"";position:absolute;left:22px;right:22px;top:24px;height:73px;border:2px solid #ffffff30;background:#061d35aa;border-radius:7px}
+.machine:after{content:"";position:absolute;left:45px;bottom:22px;width:220px;height:6px;background:linear-gradient(90deg,var(--orange),#fff0,var(--orange));box-shadow:0 -22px 0 #ffffff18}
+.gear{position:absolute;width:112px;height:112px;border:19px dotted var(--orange);border-radius:50%;right:12px;top:6px;filter:drop-shadow(0 5px 12px #0005)}
+.gear:after{content:"";position:absolute;inset:26px;border:8px solid #fff;border-radius:50%;opacity:.8}
+.spark{position:absolute;color:var(--orange);font-size:44px;left:15px;bottom:4px}
+.hero-note{position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(-7deg);font-size:20px;font-family:"Segoe Print",cursive;line-height:1.05;color:#fff;text-align:left}
+.hero-note b{color:var(--orange);font-weight:900}
+
+/* MAIN */
+.main{padding:38px 0 55px}
+.main-layout{display:grid;grid-template-columns:1fr 285px;gap:22px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}
+.section-head h3{margin:0;font-size:25px;letter-spacing:-.5px}
+.section-head p{margin:5px 0 0;color:var(--muted);font-size:11px}
+.mini-search{width:235px;height:39px;background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;gap:8px;padding:0 12px;color:#8294a6}
+.mini-search input{border:0;outline:0;width:100%;font-size:11px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{background:#fff;border:1px solid #e1e8ef;border-radius:15px;padding:19px;min-height:176px;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 22px #14314b0b;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 34px #14314b18}
+.card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent)}
+.icon{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:color-mix(in srgb,var(--accent) 13%,white);color:var(--accent)}
+.icon svg{width:22px;height:22px}
+.card h4{margin:0 0 6px;font-size:14px}
+.card p{margin:0;color:var(--muted);font-size:11px;line-height:1.55}
+.open{margin-top:auto;padding-top:14px;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.8px;display:flex;justify-content:space-between;align-items:center}
+.open span{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:13px}
+
+/* SIDEBAR */
+.side{display:flex;flex-direction:column;gap:12px}
+.sidebox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:0 6px 20px #14314b0b}
+.drive{display:flex;align-items:center;gap:12px;border:1px solid #dfe7ef;border-radius:11px;padding:12px;background:linear-gradient(135deg,#fff,#f7fafc)}
+.drive-logo{width:35px;height:35px;display:grid;place-items:center;font-size:22px}
+.sidebox h4{margin:0 0 4px;font-size:12px}.sidebox p{margin:0;color:var(--muted);font-size:9px;line-height:1.45}
+.arrow{margin-left:auto;color:var(--blue);font-size:18px}
+.help{background:linear-gradient(135deg,#eaf5ff,#dfefff);border-color:#cfe3f5}
+.quote{min-height:94px;color:#fff;background:linear-gradient(135deg,#0a2c4d,#071d34);overflow:hidden;position:relative}
+.quote:after{content:"";position:absolute;right:-35px;top:-50px;width:130px;height:130px;border:22px solid #f4772138;border-radius:50%}
+.quote strong{font-size:13px;display:block;max-width:190px;line-height:1.25}.quote small{display:block;margin-top:8px;color:#b9ccdd;font-size:9px}
+.stats{padding:0;overflow:hidden}.stat{display:flex;gap:10px;padding:12px 14px;border-bottom:1px solid #edf1f5}.stat:last-child{border-bottom:0}.stat .sicon{width:28px;height:28px;border-radius:50%;background:#fff3e9;color:var(--orange);display:grid;place-items:center;font-size:13px}.stat b{display:block;font-size:10px}.stat span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+.qrbox{display:flex;align-items:center;gap:13px}.qr{width:82px;height:82px;border:5px solid #fff;box-shadow:0 0 0 1px #d8e0e8;border-radius:5px}.qrtext b{display:block;font-size:11px}.qrtext p{margin-top:4px}
+
+/* FOOTER */
+.footer{background:#061d35;color:#c4d4e4;padding:24px 0}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-brand{display:flex;align-items:center;gap:10px}.footer-brand .mark{color:var(--orange);width:36px}.footer-brand b{color:#fff;font-size:11px}.footer-brand span{display:block;font-size:8px;margin-top:2px}
+.footer-links{display:flex;gap:18px;font-size:9px}.footer-links a:hover{color:#fff}.copyright{font-size:8px;color:#8ea4ba;text-align:right}
+
+/* MOBILE */
+@media(max-width:1050px){.navlinks{display:none}.search{width:210px}.hero-inner{grid-template-columns:1fr}.hero-art{display:none}.main-layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.topbar{height:67px}.brandtext strong{font-size:13px}.brandtext span{font-size:7px}.search{display:none}.hero-inner{padding:40px 0}.hero h1{font-size:48px}.grid{grid-template-columns:1fr 1fr}.side{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.mini-search{width:100%}.footer-row{flex-direction:column;align-items:flex-start}.copyright{text-align:left}}
+@media(max-width:480px){.container{width:92%}.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.hero h2{font-size:14px;letter-spacing:2.5px}.main{padding-top:28px}}
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="brand"><div class="logo">U</div><div><b>PT. UNIVANCE INDONESIA</b><span>MAINTENANCE DOCUMENT CENTER</span></div></div>
-  <div class="nav">SAFETY &nbsp;|&nbsp; QUALITY &nbsp;|&nbsp; CONTINUOUS IMPROVEMENT</div>
+<!-- Icon library -->
+<svg width="0" height="0" style="position:absolute">
+<defs>
+<symbol id="doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="book" viewBox="0 0 24 24"><path d="M4 5.5A3 3 0 0 1 7 3h13v17H7a3 3 0 0 0-3 3zM4 5.5v17M7 7h9M7 11h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="check" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8M8 11h8M8 15l2 2 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V5M16 20v-8M22 20H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="gear" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8 4 2 1-2 3-2-.6a8 8 0 0 1-1.5 1.5l.5 2.1-3 1.2-1.1-1.8a8 8 0 0 1-2 0l-1.1 1.8-3-1.2.5-2.1A8 8 0 0 1 6.8 15L4.7 15.6l-2-3 2-1a8 8 0 0 1 0-2l-2-1 2-3 2.1.6A8 8 0 0 1 8.3 4.7L7.8 2.6l3-1.2 1.1 1.8a8 8 0 0 1 2 0L15 1.4l3 1.2-.5 2.1A8 8 0 0 1 19 6.2l2.1-.6 2 3-2 1a8 8 0 0 1 0 2Z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></symbol>
+<symbol id="cap" viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5zM6 11v5c3 2 9 2 12 0v-5M21 10v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+</defs>
+</svg>
+
+<header class="topbar">
+ <div class="container navrow">
+  <a class="brand" href="#">
+   <svg class="brandmark" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></svg>
+   <div class="brandtext"><strong>PT. UNIVANCE INDONESIA</strong><span>Better Technology for a Brighter Future</span></div>
+  </a>
+  <nav class="navlinks">
+   <a class="active" href="#home">⌂ &nbsp;Home</a><a href="#documents">▣ &nbsp;Document Center</a><a href="#about">ⓘ &nbsp;About</a><a href="#contact">✉ &nbsp;Contact</a>
+  </nav>
+  <label class="search"><svg width="16"><use href="#search"/></svg><input id="topSearch" placeholder="Cari dokumen..."></label>
+ </div>
 </header>
-<section class="hero">
-<div class="hero-grid">
-<div><div class="pill">ONE SCAN • ALL DOCUMENTS • EASY ACCESS</div><h1>MAINTENANCE DOJO</h1><h2>UNIVANCE DOCUMENT CENTER</h2><p>Portal terpusat untuk mengakses dokumen maintenance, SOP, check sheet, report, manual mesin, serta materi training secara cepat dan mudah.</p><div><span class="pill">TOGETHER FOR BETTER MAINTENANCE</span><span class="pill">DIGITAL DOCUMENT CONTROL</span></div></div>
-<div class="qrbox"><div class="fakeqr"></div><b>SCAN UNTUK AKSES PORTAL</b><small>Gunakan QR utama yang dibagikan oleh tim Maintenance untuk membuka halaman ini.</small></div>
-</div>
+
+<section class="hero" id="home">
+ <div class="container hero-inner">
+  <div>
+   <span class="kicker">ONE STOP SOLUTION FOR MAINTENANCE DOCUMENTS</span>
+   <h1>MAINTENANCE <em>DOJO</em></h1>
+   <h2>UNIVANCE DOCUMENT CENTER</h2>
+   <p>Portal digital terpusat untuk mengakses dokumen maintenance, SOP & Work Instruction, check sheet, report, machine manual, serta materi training dengan cepat dan terstruktur.</p>
+   <div class="badges">
+    <span class="badge"><i>ϟ</i>Fast Access</span>
+    <span class="badge"><i>✓</i>Accurate Information</span>
+    <span class="badge"><i>▥</i>Better Performance</span>
+   </div>
+  </div>
+  <div class="hero-art">
+   <div class="machine"><div class="gear"></div><div class="spark">ϟ</div></div>
+   <div class="hero-note">Keep<br>Machines<br>Running<br><b>Keep Production Moving</b></div>
+  </div>
+ </div>
 </section>
-<main class="wrap">
-<div class="section-title"><h3>Document Categories</h3><p>Pilih kategori dokumen yang ingin Anda akses.</p></div>
-<div class="grid">
-<a class="card" href="https://drive.google.com/drive/folders/132MAD2CnYJ1Y7iaHjAhJk5kfpy5E1Mbc?usp=sharing" target="_blank"><div class="icon">🛠</div><h4>Maintenance Documents</h4><p>Dokumen utama dan referensi kegiatan maintenance.</p><span class="btn">OPEN DOCUMENTS</span></a>
-<a class="card" href="https://drive.google.com/drive/folders/1_irBN2TELWZLFM0dLA9HwBNU31xNAcLk?usp=sharing" target="_blank"><div class="icon">📋</div><h4>SOP & Work Instruction</h4><p>Standard Operating Procedure dan instruksi kerja.</p><span class="btn">OPEN DOCUMENTS</span></a>
-<a class="card" href="https://drive.google.com/drive/folders/1OC5Oj93jwYvajf5PlCnMJfJKTR7B4d_0?usp=sharing" target="_blank"><div class="icon">☑</div><h4>Check Sheet & Form</h4><p>Check sheet, form inspeksi, dan dokumen pengisian.</p><span class="btn">OPEN DOCUMENTS</span></a>
-<a class="card" href="https://drive.google.com/drive/folders/1OwcWQEhRWhO147zaEDs11WuFbQN37qLg?usp=sharing" target="_blank"><div class="icon">📊</div><h4>Maintenance Report</h4><p>Laporan kegiatan, histori, dan hasil pekerjaan maintenance.</p><span class="btn">OPEN DOCUMENTS</span></a>
-<a class="card" href="https://drive.google.com/drive/folders/1b6pOWvLIHZEtShCZh9jPlEjXV63pER9M?usp=sharing" target="_blank"><div class="icon">📘</div><h4>Machine Manual</h4><p>Manual, technical reference, dan informasi mesin.</p><span class="btn">OPEN DOCUMENTS</span></a>
-<a class="card" href="https://drive.google.com/drive/folders/1pPwCRyMOenHqsYkGMOyKRra5SwssO_th?usp=sharing" target="_blank"><div class="icon">🎓</div><h4>Training & Knowledge</h4><p>Materi training, lesson learned, dan knowledge sharing.</p><span class="btn">OPEN DOCUMENTS</span></a>
-</div>
-<div class="notice"><b>📌 Document Access:</b> Pastikan Anda memiliki izin akses Google Drive. Jika dokumen tidak dapat dibuka, hubungi PIC/administrator Maintenance.</div>
+
+<main class="main" id="documents">
+ <div class="container main-layout">
+  <section>
+   <div class="section-head">
+    <div><h3>Document Categories</h3><p>Pilih kategori dokumen yang Anda butuhkan.</p></div>
+    <label class="mini-search"><svg width="15"><use href="#search"/></svg><input id="docSearch" placeholder="Cari kategori..."></label>
+   </div>
+   <div class="grid" id="cards">
+    <a class="card" style="--accent:#1477c9" data-name="maintenance documents" href="https://drive.google.com/drive/folders/132MAD2CnYJ1Y7iaHjAhJk5kfpy5E1Mbc?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#doc"/></svg></div><h4>Maintenance Documents</h4><p>Dokumen umum terkait maintenance, guideline, reference, dan data pendukung.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
+    <a class="card" style="--accent:#14a889" data-name="sop work instruction" href="https://drive.google.com/drive/folders/1_irBN2TELWZLFM0dLA9HwBNU31xNAcLk?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#book"/></svg></div><h4>SOP & Work Instruction</h4><p>Standard Operating Procedure dan instruksi kerja untuk kegiatan maintenance.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
+    <a class="card" style="--accent:#f59a23" data-name="check sheet form" href="https://drive.google.com/drive/folders/1OC5Oj93jwYvajf5PlCnMJfJKTR7B4d_0?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#check"/></svg></div><h4>Check Sheet & Form</h4><p>Formulir, check sheet, dan template yang digunakan dalam kegiatan maintenance.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
+    <a class="card" style="--accent:#7052df" data-name="maintenance report" href="https://drive.google.com/drive/folders/1OwcWQEhRWhO147zaEDs11WuFbQN37qLg?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#chart"/></svg></div><h4>Maintenance Report</h4><p>Laporan kegiatan maintenance, rekapitulasi, histori, dan data pendukung.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
+    <a class="card" style="--accent:#0ca7c8" data-name="machine manual" href="https://drive.google.com/drive/folders/1b6pOWvLIHZEtShCZh9jPlEjXV63pER9M?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#gear"/></svg></div><h4>Machine Manual</h4><p>Manual book dan technical data untuk mesin produksi.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
+    <a class="card" style="--accent:#e63d62" data-name="training knowledge" href="https://drive.google.com/drive/folders/1pPwCRyMOenHqsYkGMOyKRra5SwssO_th?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#cap"/></svg></div><h4>Training & Knowledge</h4><p>Materi training, sharing knowledge, dan referensi pembelajaran.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
+   </div>
+  </section>
+
+  <aside class="side" id="about">
+   <a class="sidebox drive" href="https://drive.google.com/drive/folders/132MAD2CnYJ1Y7iaHjAhJk5kfpy5E1Mbc?usp=sharing" target="_blank" rel="noopener">
+    <div class="drive-logo">▲</div><div><h4>Google Drive</h4><p>Akses langsung ke folder dokumen</p></div><div class="arrow">›</div>
+   </a>
+   <div class="sidebox help" id="contact"><h4>Butuh Bantuan?</h4><p>Hubungi tim Maintenance atau Admin jika ada kendala akses dokumen.</p></div>
+   <div class="sidebox quote"><strong>“Good Maintenance<br>Builds a Great Future”</strong><small>— Maintenance Team</small></div>
+   <div class="sidebox stats">
+    <div class="stat"><div class="sicon">◷</div><div><b>Akses Cepat</b><span>Dokumen selalu tersedia kapan saja, di mana saja.</span></div></div>
+    <div class="stat"><div class="sicon">✓</div><div><b>Tertata & Terpercaya</b><span>Informasi resmi dari PT. Univance Indonesia.</span></div></div>
+    <div class="stat"><div class="sicon">◎</div><div><b>Dukung Produksi</b><span>Bersama jaga kinerja mesin dan kelancaran produksi.</span></div></div>
+   </div>
+   <div class="sidebox qrbox">
+    <img class="qr" alt="QR Code Maintenance Dojo" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=https%3A%2F%2Fsilpiaardiya-cpu.github.io%2F">
+    <div class="qrtext"><b>Scan QR</b><p>Buka Maintenance Dojo langsung dari HP.</p></div>
+   </div>
+  </aside>
+ </div>
 </main>
-<footer class="foot"><b>PT. UNIVANCE INDONESIA</b><br><span class="tag">TOGETHER FOR BETTER MAINTENANCE</span><br>Maintenance Dojo • Digital Document Center</footer>
-</body></html>
+
+<footer class="footer">
+ <div class="container footer-row">
+  <div class="footer-brand">
+   <svg class="mark" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></svg>
+   <div><b>PT. UNIVANCE INDONESIA</b><span>Better Technology for a Brighter Future</span></div>
+  </div>
+  <div class="footer-links"><a href="#home">Home</a><a href="#documents">Document Center</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+  <div class="copyright">Maintenance Dojo • Digital Document Center<br>Last Update: 23 Sep 2026</div>
+ </div>
+</footer>
+
+<script>
+const searchInputs=[document.getElementById('docSearch'),document.getElementById('topSearch')];
+const cards=[...document.querySelectorAll('.card')];
+function filterCards(q){
+ q=(q||'').toLowerCase().trim();
+ cards.forEach(c=>{c.style.display=(!q||c.dataset.name.includes(q))?'flex':'none'});
+}
+searchInputs.forEach(input=>input&&input.addEventListener('input',e=>{
+ if(input===document.getElementById('topSearch')) document.getElementById('docSearch').value=e.target.value;
+ else document.getElementById('topSearch').value=e.target.value;
+ filterCards(e.target.value);
+}));
+</script>
+</body>
+</html>
