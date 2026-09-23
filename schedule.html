@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071f3a">
+<title>Training Schedule | Maintenance Dojo</title>
+<style>
+:root{--navy:#071f3a;--navy2:#0b3156;--orange:#f47721;--ink:#102b49;--muted:#667b91;--line:#dfe7ef;--bg:#f3f6f9;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit}.container{width:min(1240px,92%);margin:auto}
+.header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px}.logo{width:40px;color:var(--orange)}.brand b{display:block;font-size:15px;letter-spacing:.3px}.brand span{font-size:9px;font-style:italic;font-weight:700;color:#60758b}
+.back{font-size:11px;font-weight:800;color:var(--navy);padding:10px 14px;border:1px solid var(--line);border-radius:20px}.back:hover{color:var(--orange);border-color:#f6c49e}
+.hero{background:linear-gradient(115deg,#061d35,#0a3b61);color:#fff;padding:48px 0;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:400px;height:400px;border:70px solid #ffffff0c;border-radius:50%;right:-150px;top:-180px}.eyebrow{display:inline-block;color:#ffc58e;font-size:10px;font-weight:900;letter-spacing:2px;border:1px solid #ffffff25;border-radius:20px;padding:8px 12px}.hero h1{font-size:42px;margin:15px 0 8px}.hero h1 em{font-style:normal;color:var(--orange)}.hero p{max-width:720px;color:#d4e3ef;font-size:13px;line-height:1.7;margin:0}
+.main{padding:32px 0 55px}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 28px #17324b0d;padding:22px;margin-bottom:18px}.panel-title{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:18px}.panel-title h2{font-size:20px;margin:0 0 5px}.panel-title p{font-size:10px;color:var(--muted);margin:0}
+.filters{display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:12px}.field label{display:block;font-size:10px;font-weight:900;margin-bottom:6px}.field input,.field select{width:100%;height:42px;border:1px solid #d8e2eb;border-radius:9px;padding:0 11px;outline:0;font-size:11px;color:var(--ink);background:#fff}.field input:focus,.field select:focus{border-color:var(--orange);box-shadow:0 0 0 3px #f4772118}.btn{height:42px;border:0;border-radius:9px;padding:0 18px;background:var(--orange);color:#fff;font-weight:900;font-size:11px;cursor:pointer}.btn:hover{background:#df6514}
+.result{display:flex;align-items:center;justify-content:space-between;margin:20px 0 10px}.result strong{font-size:13px}.result span{font-size:10px;color:var(--muted)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.table{width:100%;border-collapse:collapse;min-width:750px}.table th{background:#f4f7fa;color:#536b82;font-size:9px;text-transform:uppercase;letter-spacing:.5px;text-align:left;padding:12px}.table td{padding:13px 12px;border-top:1px solid #edf1f4;font-size:10px}.table tr:hover td{background:#fbfcfd}.tag{display:inline-block;border-radius:20px;padding:5px 9px;font-size:8px;font-weight:900;background:#fff2e8;color:#d85f10}.empty{padding:28px;text-align:center;color:var(--muted);font-size:11px;display:none}
+.drive-panel{display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(120deg,#071f3a,#0b3156);color:#fff}.drive-panel h3{margin:0 0 5px;font-size:16px}.drive-panel p{margin:0;color:#c7d9e8;font-size:10px}.drive-btn{background:#fff;color:var(--navy);padding:11px 16px;border-radius:9px;font-size:10px;font-weight:900;white-space:nowrap}.drive-btn:hover{background:#fff2e8;color:var(--orange)}
+.footer{background:var(--navy);color:#9eb3c8;text-align:center;padding:18px;font-size:9px}
+@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}.btn{width:100%}.panel-title{align-items:start;flex-direction:column}.drive-panel{align-items:flex-start;flex-direction:column}.hero h1{font-size:34px}}
+@media(max-width:500px){.filters{grid-template-columns:1fr}.header{height:auto;padding:14px 0}.nav{align-items:flex-start}.brand b{font-size:12px}.hero{padding:38px 0}.hero h1{font-size:30px}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header class="header"><div class="container nav"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5"/></svg><div><b>PT. UNIVANCE INDONESIA</b><span>Better Technology for a Brighter Future</span></div></a><a class="back" href="index.html">← Kembali ke Maintenance Dojo</a></div></header>
+
+<section class="hero"><div class="container"><span class="eyebrow">MAINTENANCE DOJO • TRAINING CENTER</span><h1>Training <em>Schedule</em></h1><p>Gunakan filter di bawah untuk mencari jadwal pendidikan/training. Setelah menemukan jadwal yang dibutuhkan, dokumen lengkap dapat dibuka melalui Google Drive.</p></div></section>
+
+<main class="main"><div class="container">
+<section class="panel">
+ <div class="panel-title"><div><h2>Cari Jadwal Pendidikan</h2><p>Isi salah satu atau beberapa kolom untuk menampilkan jadwal.</p></div></div>
+ <div class="filters">
+  <div class="field"><label>Nama Training / Pendidikan</label><input id="keyword" placeholder="Contoh: PLC, CNC, Preventive Maintenance"></div>
+  <div class="field"><label>Bulan</label><select id="month"><option value="">Semua Bulan</option><option>Januari</option><option>Februari</option><option>Maret</option><option>April</option><option>Mei</option><option>Juni</option><option>Juli</option><option>Agustus</option><option>September</option><option>Oktober</option><option>November</option><option>Desember</option></select></div>
+  <div class="field"><label>Departemen</label><select id="dept"><option value="">Semua Departemen</option><option>Maintenance</option><option>Production</option><option>Quality</option><option>Engineering</option><option>Other</option></select></div>
+  <button class="btn" id="searchBtn">CARI JADWAL</button>
+ </div>
+</section>
+
+<section class="panel">
+ <div class="result"><strong>Daftar Jadwal</strong><span id="count"></span></div>
+ <div class="table-wrap"><table class="table"><thead><tr><th>Tanggal</th><th>Training / Pendidikan</th><th>Departemen</th><th>Trainer</th><th>Lokasi</th><th>Status</th></tr></thead><tbody id="scheduleBody"></tbody></table><div class="empty" id="empty">Data jadwal tidak ditemukan. Silakan ubah filter atau buka data lengkap di Google Drive.</div></div>
+</section>
+
+<section class="panel drive-panel"><div><h3>Data Jadwal Lengkap</h3><p>Gunakan Google Drive untuk melihat file schedule resmi dan dokumen pendukung lainnya.</p></div><a class="drive-btn" href="https://drive.google.com/drive/folders/1IojVD6QGu8tRfDW8ZPLw2AVK_sR0orQk?usp=sharing" target="_blank" rel="noopener">BUKA GOOGLE DRIVE →</a></section>
+</div></main>
+<footer class="footer">Maintenance Dojo • Univance Document Center • PT. Univance Indonesia</footer>
+
+<script>
+const data=[
+ {date:'2026-09-28',month:'September',name:'Basic Preventive Maintenance',dept:'Maintenance',trainer:'Internal Maintenance',location:'Training Room',status:'Planned'},
+ {date:'2026-10-05',month:'Oktober',name:'PLC Basic Training',dept:'Engineering',trainer:'Engineering Team',location:'Training Room',status:'Planned'},
+ {date:'2026-10-12',month:'Oktober',name:'CNC Machine Maintenance',dept:'Maintenance',trainer:'Maintenance Team',location:'Workshop',status:'Planned'},
+ {date:'2026-11-02',month:'November',name:'Safety & Maintenance Awareness',dept:'Maintenance',trainer:'HSE Team',location:'Training Room',status:'Planned'}
+];
+const keyword=document.getElementById('keyword'), month=document.getElementById('month'), dept=document.getElementById('dept'), body=document.getElementById('scheduleBody'), empty=document.getElementById('empty'), count=document.getElementById('count');
+function render(){
+ const q=keyword.value.toLowerCase().trim(), m=month.value, d=dept.value;
+ const rows=data.filter(x=>(!q||x.name.toLowerCase().includes(q))&&(!m||x.month===m)&&(!d||x.dept===d));
+ body.innerHTML=rows.map(x=>'<tr><td>'+new Date(x.date+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'short',year:'numeric'})+'</td><td><b>'+x.name+'</b></td><td>'+x.dept+'</td><td>'+x.trainer+'</td><td>'+x.location+'</td><td><span class="tag">'+x.status+'</span></td></tr>').join('');
+ empty.style.display=rows.length?'none':'block'; count.textContent=rows.length+' jadwal ditemukan';
+}
+document.getElementById('searchBtn').addEventListener('click',render);
+[keyword,month,dept].forEach(x=>x.addEventListener('change',render));
+keyword.addEventListener('keyup',e=>{if(e.key==='Enter')render()});
+render();
+</script>
+</body>
+</html>
