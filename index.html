@@ -4,283 +4,40 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#071f3a">
-<meta name="description" content="Maintenance Dojo - Univance Document Center">
-<title>Maintenance Dojo | PT. Univance Indonesia</title>
+<title>Maintenance Area | PT. Univance Indonesia</title>
 <style>
-:root{
- --navy:#071f3a;--navy2:#0b3156;--orange:#f47721;--orange2:#ff9a2e;
- --blue:#1477c9;--cyan:#0ca7c8;--green:#14a889;--purple:#7052df;
- --ink:#102b49;--muted:#667b91;--line:#dfe7ef;--soft:#f5f8fb;--white:#fff;
-}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#f3f6f9}
-a{text-decoration:none;color:inherit}
-svg{display:block}
-.container{width:min(1380px,92%);margin:auto}
-
-/* HEADER */
-.topbar{height:78px;background:#fff;border-bottom:1px solid #e5ebf1;display:flex;align-items:center;position:sticky;top:0;z-index:20}
-.navrow{display:flex;align-items:center;gap:28px}
-.brand{display:flex;align-items:center;gap:12px;margin-right:10px}
-.brandmark{width:42px;height:42px;color:var(--orange)}
-.brandtext strong{display:block;font-size:16px;letter-spacing:.4px;color:#102d4d}
-.brandtext span{display:block;font-size:9px;font-style:italic;font-weight:700;color:#50647a;margin-top:2px}
-.navlinks{display:flex;align-items:center;gap:5px}
-.navlinks a{padding:11px 13px;border-radius:9px;font-size:12px;font-weight:800;color:#263f5b}
-.navlinks a.active,.navlinks a:hover{background:#fff4ea;color:var(--orange)}
-.search{margin-left:auto;width:255px;height:39px;border:1px solid #d8e1ea;border-radius:22px;display:flex;align-items:center;padding:0 13px;gap:8px;color:#789}
-.search input{border:0;outline:0;width:100%;font-size:11px;background:transparent}
-
-/* HERO */
-.hero{position:relative;overflow:hidden;background:
- radial-gradient(circle at 82% 18%,#f99a2b55 0 2%,transparent 20%),
- linear-gradient(118deg,#061d35 0%,#092d4e 52%,#0b4770 100%);color:#fff}
-.hero:before{content:"";position:absolute;inset:0;opacity:.14;background:
- linear-gradient(90deg,transparent 0 68%,#fff 68.2% 68.5%,transparent 68.7%),
- linear-gradient(0deg,transparent 0 82%,#fff 82.2% 82.5%,transparent 82.7%),
- repeating-linear-gradient(90deg,transparent 0 70px,#fff 71px 72px,transparent 73px 145px);
- transform:skewX(-10deg) scale(1.2);transform-origin:right top}
-.hero:after{content:"";position:absolute;right:-130px;bottom:-240px;width:560px;height:560px;border:95px solid #ffffff12;border-radius:50%}
-.hero-inner{min-height:350px;display:grid;grid-template-columns:1.25fr .75fr;gap:30px;align-items:center;position:relative;z-index:2;padding:52px 0}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:900;letter-spacing:1.8px;color:#ffd19d;background:#ffffff12;border:1px solid #ffffff22;border-radius:20px;padding:8px 12px}
-.hero h1{font-size:clamp(40px,5.4vw,72px);line-height:.9;margin:16px 0 8px;font-weight:950;letter-spacing:-2px}
-.hero h1 em{color:var(--orange);font-style:normal}
-.hero h2{font-size:20px;letter-spacing:4px;margin:0;color:#fff;font-weight:800}
-.hero p{max-width:670px;color:#d7e6f3;font-size:14px;line-height:1.75;margin:18px 0 20px}
-.badges{display:flex;flex-wrap:wrap;gap:8px}
-.badge{display:flex;align-items:center;gap:7px;font-size:10px;font-weight:900;color:#fff}
-.badge i{width:25px;height:25px;border:1px solid #ff8b34;border-radius:50%;display:grid;place-items:center;color:#ff8b34;font-style:normal}
-.hero-art{height:265px;position:relative;display:flex;align-items:center;justify-content:center}
-.machine{width:315px;height:185px;border:2px solid #ffffff30;border-radius:14px;background:linear-gradient(180deg,#ffffff12,#ffffff05);box-shadow:0 25px 60px #0005;position:relative}
-.machine:before{content:"";position:absolute;left:22px;right:22px;top:24px;height:73px;border:2px solid #ffffff30;background:#061d35aa;border-radius:7px}
-.machine:after{content:"";position:absolute;left:45px;bottom:22px;width:220px;height:6px;background:linear-gradient(90deg,var(--orange),#fff0,var(--orange));box-shadow:0 -22px 0 #ffffff18}
-.gear{position:absolute;width:112px;height:112px;border:19px dotted var(--orange);border-radius:50%;right:12px;top:6px;filter:drop-shadow(0 5px 12px #0005)}
-.gear:after{content:"";position:absolute;inset:26px;border:8px solid #fff;border-radius:50%;opacity:.8}
-.spark{position:absolute;color:var(--orange);font-size:44px;left:15px;bottom:4px}
-.hero-note{position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(-7deg);font-size:20px;font-family:"Segoe Print",cursive;line-height:1.05;color:#fff;text-align:left}
-.hero-note b{color:var(--orange);font-weight:900}
-
-/* MAIN */
-.main{padding:38px 0 55px}
-.main-layout{display:grid;grid-template-columns:1fr 285px;gap:22px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}
-.section-head h3{margin:0;font-size:25px;letter-spacing:-.5px}
-.section-head p{margin:5px 0 0;color:var(--muted);font-size:11px}
-.mini-search{width:235px;height:39px;background:#fff;border:1px solid var(--line);border-radius:20px;display:flex;align-items:center;gap:8px;padding:0 12px;color:#8294a6}
-.mini-search input{border:0;outline:0;width:100%;font-size:11px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card{background:#fff;border:1px solid #e1e8ef;border-radius:15px;padding:19px;min-height:176px;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 22px #14314b0b;transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 34px #14314b18}
-.card:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent)}
-.icon{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px;background:color-mix(in srgb,var(--accent) 13%,white);color:var(--accent)}
-.icon svg{width:22px;height:22px}
-.card h4{margin:0 0 6px;font-size:14px}
-.card p{margin:0;color:var(--muted);font-size:11px;line-height:1.55}
-.open{margin-top:auto;padding-top:14px;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.8px;display:flex;justify-content:space-between;align-items:center}
-.open span{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:13px}
-
-/* SIDEBAR */
-.side{display:flex;flex-direction:column;gap:12px}
-.sidebox{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:0 6px 20px #14314b0b}
-.drive{display:flex;align-items:center;gap:12px;border:1px solid #dfe7ef;border-radius:11px;padding:12px;background:linear-gradient(135deg,#fff,#f7fafc)}
-.drive-logo{width:35px;height:35px;display:grid;place-items:center;font-size:22px}
-.sidebox h4{margin:0 0 4px;font-size:12px}.sidebox p{margin:0;color:var(--muted);font-size:9px;line-height:1.45}
-.arrow{margin-left:auto;color:var(--blue);font-size:18px}
-.help{background:linear-gradient(135deg,#eaf5ff,#dfefff);border-color:#cfe3f5}
-.quote{min-height:94px;color:#fff;background:linear-gradient(135deg,#0a2c4d,#071d34);overflow:hidden;position:relative}
-.quote:after{content:"";position:absolute;right:-35px;top:-50px;width:130px;height:130px;border:22px solid #f4772138;border-radius:50%}
-.quote strong{font-size:13px;display:block;max-width:190px;line-height:1.25}.quote small{display:block;margin-top:8px;color:#b9ccdd;font-size:9px}
-.stats{padding:0;overflow:hidden}.stat{display:flex;gap:10px;padding:12px 14px;border-bottom:1px solid #edf1f5}.stat:last-child{border-bottom:0}.stat .sicon{width:28px;height:28px;border-radius:50%;background:#fff3e9;color:var(--orange);display:grid;place-items:center;font-size:13px}.stat b{display:block;font-size:10px}.stat span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
-.qrbox{display:flex;align-items:center;gap:13px}.qr{width:82px;height:82px;border:5px solid #fff;box-shadow:0 0 0 1px #d8e0e8;border-radius:5px}.qrtext b{display:block;font-size:11px}.qrtext p{margin-top:4px}
-
-/* FOOTER */
-.footer{background:#061d35;color:#c4d4e4;padding:24px 0}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.footer-brand{display:flex;align-items:center;gap:10px}.footer-brand .mark{color:var(--orange);width:36px}.footer-brand b{color:#fff;font-size:11px}.footer-brand span{display:block;font-size:8px;margin-top:2px}
-.footer-links{display:flex;gap:18px;font-size:9px}.footer-links a:hover{color:#fff}.copyright{font-size:8px;color:#8ea4ba;text-align:right}
-
-/* MOBILE */
-@media(max-width:1050px){.navlinks{display:none}.search{width:210px}.hero-inner{grid-template-columns:1fr}.hero-art{display:none}.main-layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,1fr)}}
-@media(max-width:700px){.topbar{height:67px}.brandtext strong{font-size:13px}.brandtext span{font-size:7px}.search{display:none}.hero-inner{padding:40px 0}.hero h1{font-size:48px}.grid{grid-template-columns:1fr 1fr}.side{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.mini-search{width:100%}.footer-row{flex-direction:column;align-items:flex-start}.copyright{text-align:left}}
-@media(max-width:480px){.container{width:92%}.grid{grid-template-columns:1fr}.hero h1{font-size:42px}.hero h2{font-size:14px;letter-spacing:2.5px}.main{padding-top:28px}}
-</style>
-<style>
-.schedule-modal{position:fixed;inset:0;background:rgba(4,18,34,.72);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
-.schedule-modal.show{display:flex}
-.login-box{width:min(420px,100%);background:#fff;border-radius:20px;box-shadow:0 25px 80px #0008;padding:30px;position:relative;border:1px solid #e1e8ef}
-.login-logo{width:54px;height:54px;border-radius:15px;background:#fff4ea;color:#f47721;display:grid;place-items:center;font-size:25px;margin-bottom:16px}
-.login-box h3{margin:0;color:#102b49;font-size:23px}.login-box p{color:#667b91;font-size:12px;line-height:1.6;margin:7px 0 20px}
-.login-field{margin-bottom:13px}.login-field label{display:block;font-size:10px;font-weight:900;color:#263f5b;margin-bottom:6px}
-.login-field input{width:100%;height:43px;border:1px solid #d8e1ea;border-radius:10px;padding:0 12px;outline:none;font-size:12px}
-.login-field input:focus{border-color:#1477c9;box-shadow:0 0 0 3px #1477c918}
-.login-actions{display:flex;gap:9px;margin-top:18px}.login-btn{flex:1;height:43px;border:0;border-radius:10px;background:#f47721;color:#fff;font-weight:900;cursor:pointer}.login-cancel{height:43px;padding:0 18px;border:1px solid #d8e1ea;background:#fff;border-radius:10px;color:#526a81;font-weight:800;cursor:pointer}
-.login-error{display:none;color:#d63b3b;background:#fff0f0;border:1px solid #ffd1d1;border-radius:8px;padding:8px 10px;font-size:10px;margin-top:10px}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,Segoe UI,Arial,sans-serif}
+body{background:#071f3a;color:#fff;overflow-x:hidden}
+.page{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,#f4772140 0,transparent 28%),linear-gradient(135deg,#06192d,#0a3558 58%,#09233c)}
+.page:before{content:"";position:absolute;inset:-20%;opacity:.08;background:repeating-linear-gradient(90deg,transparent 0 70px,#fff 71px 72px,transparent 73px 145px),repeating-linear-gradient(0deg,transparent 0 70px,#fff 71px 72px,transparent 73px 145px);transform:rotate(-8deg)}
+.page:after{content:"";position:absolute;width:600px;height:600px;border:95px solid #ffffff0b;border-radius:50%;right:-250px;bottom:-310px}
+.wrap{width:min(1000px,90%);position:relative;z-index:2;text-align:center;padding:45px 0}
+.brand{display:inline-flex;align-items:center;gap:12px;margin-bottom:35px;text-align:left}.logo{width:48px;color:#f47721}.brand b{display:block;font-size:15px;letter-spacing:.5px}.brand span{display:block;color:#a9bdd0;font-size:9px;font-style:italic;font-weight:700;margin-top:3px}
+.kicker{display:inline-block;padding:8px 14px;border:1px solid #ffffff25;border-radius:30px;color:#ffc58e;font-size:10px;font-weight:900;letter-spacing:2px}
+h1{font-size:clamp(42px,7vw,76px);line-height:.98;margin:20px 0 12px;letter-spacing:-2px;font-weight:950}h1 em{font-style:normal;color:#f47721}
+.subtitle{font-size:14px;color:#d3e2ee;letter-spacing:3px;font-weight:800;margin:0 auto 42px}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:22px;width:min(760px,100%);margin:auto}
+.choice{display:block;text-align:left;background:#fff;color:#102b49;border-radius:20px;padding:28px 30px;min-height:190px;border:2px solid transparent;box-shadow:0 18px 45px #0004;transition:.2s;position:relative;overflow:hidden}
+.choice:hover{transform:translateY(-6px);border-color:#f47721;box-shadow:0 24px 55px #0006}.choice:after{content:"";position:absolute;width:130px;height:130px;border:22px solid #f4772118;border-radius:50%;right:-40px;bottom:-60px}
+.icon{width:54px;height:54px;border-radius:15px;background:#fff2e8;color:#f47721;display:grid;place-items:center;font-size:27px;margin-bottom:18px}
+.choice h2{font-size:20px;margin:0 0 8px}.choice p{font-size:11px;color:#687d91;line-height:1.6;margin:0;max-width:430px}.go{display:flex;justify-content:space-between;align-items:center;margin-top:20px;font-size:10px;font-weight:950;letter-spacing:1px;color:#f47721}.arrow{width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#f47721;color:#fff;font-size:16px}
+.footer{margin-top:45px;color:#8198ad;font-size:9px;line-height:1.6}.contact{color:#a9bdd0;margin-top:7px}.contact a{color:#ffc58e;text-decoration:none}
+@media(max-width:650px){.buttons{grid-template-columns:1fr}.choice{min-height:auto}.subtitle{font-size:11px;letter-spacing:1.5px}.brand{margin-bottom:25px}h1{font-size:43px}.wrap{padding:30px 0}}
 </style>
 </head>
 <body>
-
-<div class="schedule-modal" id="scheduleModal" aria-hidden="true">
- <div class="login-box" role="dialog" aria-modal="true" aria-labelledby="scheduleLoginTitle">
-  <div class="login-logo">🔐</div>
-  <h3 id="scheduleLoginTitle">Schedule Pendidikan</h3>
-  <p>Silakan masukkan username dan password untuk mengakses halaman Schedule Pendidikan.</p>
-  <form id="scheduleLoginForm">
-   <div class="login-field"><label for="scheduleUser">USERNAME</label><input id="scheduleUser" type="text" autocomplete="username" placeholder="Masukkan username" required></div>
-   <div class="login-field"><label for="schedulePass">PASSWORD</label><input id="schedulePass" type="password" autocomplete="current-password" placeholder="Masukkan password" required></div>
-   <div class="login-error" id="scheduleError">Username atau password salah.</div>
-   <div class="login-actions"><button type="button" class="login-cancel" id="scheduleCancel">Batal</button><button type="submit" class="login-btn">Masuk ke Schedule</button></div>
-  </form>
- </div>
+<main class="page">
+<div class="wrap">
+<div class="brand"><svg class="logo" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5"/></svg><div><b>PT. UNIVANCE INDONESIA</b><span>Better Technology for a Brighter Future</span></div></div>
+<div class="kicker">MAINTENANCE DIGITAL AREA</div>
+<h1>Welcome to the website<br><em>MAINTENANCE AREA</em></h1>
+<p class="subtitle">PLEASE SELECT THE AREA YOU WANT TO ACCESS</p>
+<div class="buttons">
+<a class="choice" href="maintenance.html"><div class="icon">⚙</div><h2>MAINTENANCE DOJO</h2><p>Portal dokumen maintenance, SOP & Work Instruction, Check Sheet, Report, Machine Manual, Training, dan dokumen pendukung lainnya.</p><div class="go">OPEN MAINTENANCE DOJO <span class="arrow">›</span></div></a>
+<a class="choice" href="sparepart.html"><div class="icon">▣</div><h2>MAINTENANCE WAREHOUSE</h2><p>Gudang Spare Parts Maintenance. Lihat database spare part, jumlah stock, minimum stock, dan lokasi penyimpanan di rak.</p><div class="go">OPEN MAINTENANCE WAREHOUSE <span class="arrow">›</span></div></a>
 </div>
-<!-- Icon library -->
-<svg width="0" height="0" style="position:absolute">
-<defs>
-<symbol id="doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-<symbol id="book" viewBox="0 0 24 24"><path d="M4 5.5A3 3 0 0 1 7 3h13v17H7a3 3 0 0 0-3 3zM4 5.5v17M7 7h9M7 11h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-<symbol id="check" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 7h8M8 11h8M8 15l2 2 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-<symbol id="chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V5M16 20v-8M22 20H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-<symbol id="gear" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8 4 2 1-2 3-2-.6a8 8 0 0 1-1.5 1.5l.5 2.1-3 1.2-1.1-1.8a8 8 0 0 1-2 0l-1.1 1.8-3-1.2.5-2.1A8 8 0 0 1 6.8 15L4.7 15.6l-2-3 2-1a8 8 0 0 1 0-2l-2-1 2-3 2.1.6A8 8 0 0 1 8.3 4.7L7.8 2.6l3-1.2 1.1 1.8a8 8 0 0 1 2 0L15 1.4l3 1.2-.5 2.1A8 8 0 0 1 19 6.2l2.1-.6 2 3-2 1a8 8 0 0 1 0 2Z" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/></symbol>
-<symbol id="cap" viewBox="0 0 24 24"><path d="m3 9 9-5 9 5-9 5zM6 11v5c3 2 9 2 12 0v-5M21 10v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-<symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-</defs>
-</svg>
-
-<header class="topbar">
- <div class="container navrow">
-  <a class="brand" href="#">
-   <svg class="brandmark" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></svg>
-   <div class="brandtext"><strong>PT. UNIVANCE INDONESIA</strong><span>Better Technology for a Brighter Future</span></div>
-  </a>
-  <nav class="navlinks">
-   <a class="active" href="#home">⌂ &nbsp;Home</a><a href="maintenance.html">▣ &nbsp;Document Center</a><a href="sparepart.html">🔧 &nbsp;Spare Part Warehouse</a><a href="schedule.html">▣ &nbsp;Schedule Pendidikan</a><a href="#about">ⓘ &nbsp;About</a><a href="#contact">✉ &nbsp;Contact</a>
-  </nav>
-  <label class="search"><svg width="16"><use href="#search"/></svg><input id="topSearch" placeholder="Cari dokumen..."></label>
- </div>
-</header>
-
-<section class="hero" id="home">
- <div class="container hero-inner">
-  <div>
-   <span class="kicker">ONE STOP SOLUTION FOR MAINTENANCE DOCUMENTS</span>
-   <h1>MAINTENANCE <em>DOJO</em></h1>
-   <h2>UNIVANCE DOCUMENT CENTER</h2>
-   <p>Portal digital terpusat untuk mengakses dokumen maintenance, SOP & Work Instruction, check sheet, report, machine manual, serta materi training dengan cepat dan terstruktur.</p>
-   <div class="badges">
-    <span class="badge"><i>ϟ</i>Fast Access</span>
-    <span class="badge"><i>✓</i>Accurate Information</span>
-    <span class="badge"><i>▥</i>Better Performance</span>
-   </div>
-  </div>
-  <div class="hero-art">
-   <div class="machine"><div class="gear"></div><div class="spark">ϟ</div></div>
-   <div class="hero-note">Keep<br>Machines<br>Running<br><b>Keep Production Moving</b></div>
-  </div>
- </div>
-</section>
-
-<main class="main" id="documents">
- <div class="container main-layout">
-  <section>
-   <div class="section-head">
-    <div><h3>Document Categories</h3><p>Pilih kategori dokumen yang Anda butuhkan.</p></div>
-    <label class="mini-search"><svg width="15"><use href="#search"/></svg><input id="docSearch" placeholder="Cari kategori..."></label>
-   </div>
-   <div class="grid" id="cards">
-    <a class="card" style="--accent:#1477c9" data-name="maintenance documents" href="maintenance.html"><div class="icon"><svg><use href="#doc"/></svg></div><h4>Maintenance Documents</h4><p>Dokumen umum terkait maintenance, guideline, reference, dan data pendukung.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
-    <a class="card" style="--accent:#14a889" data-name="sop work instruction" href="https://drive.google.com/drive/folders/1_irBN2TELWZLFM0dLA9HwBNU31xNAcLk?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#book"/></svg></div><h4>SOP & Work Instruction</h4><p>Standard Operating Procedure dan instruksi kerja untuk kegiatan maintenance.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
-    <a class="card" style="--accent:#f59a23" data-name="check sheet form" href="https://drive.google.com/drive/folders/1OC5Oj93jwYvajf5PlCnMJfJKTR7B4d_0?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#check"/></svg></div><h4>Check Sheet & Form</h4><p>Formulir, check sheet, dan template yang digunakan dalam kegiatan maintenance.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
-    <a class="card" style="--accent:#7052df" data-name="maintenance report" href="https://drive.google.com/drive/folders/1OwcWQEhRWhO147zaEDs11WuFbQN37qLg?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#chart"/></svg></div><h4>Maintenance Report</h4><p>Laporan kegiatan maintenance, rekapitulasi, histori, dan data pendukung.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
-    <a class="card" style="--accent:#0ca7c8" data-name="machine manual" href="https://drive.google.com/drive/folders/1b6pOWvLIHZEtShCZh9jPlEjXV63pER9M?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#gear"/></svg></div><h4>Machine Manual</h4><p>Manual book dan technical data untuk mesin produksi.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
-    <a class="card" style="--accent:#ef6c00" data-name="schedule pendidikan training jadwal" href="schedule.html"><div class="icon"><svg><use href="#cap"/></svg></div><h4>Schedule Pendidikan</h4><p>Lihat jadwal pendidikan dan training maintenance sebelum membuka data lengkap di Google Drive.</p><div class="open">OPEN SCHEDULE <span>›</span></div></a>
-    <a class="card" style="--accent:#e63d62" data-name="training knowledge" href="https://drive.google.com/drive/folders/1pPwCRyMOenHqsYkGMOyKRra5SwssO_th?usp=sharing" target="_blank" rel="noopener"><div class="icon"><svg><use href="#cap"/></svg></div><h4>Training & Knowledge</h4><p>Materi training, sharing knowledge, dan referensi pembelajaran.</p><div class="open">OPEN DOCUMENTS <span>›</span></div></a>
-   </div>
-  </section>
-
-  <aside class="side" id="about">
-   <a class="sidebox drive" href="https://drive.google.com/drive/folders/132MAD2CnYJ1Y7iaHjAhJk5kfpy5E1Mbc?usp=sharing" target="_blank" rel="noopener">
-    <div class="drive-logo">▲</div><div><h4>Google Drive</h4><p>Akses langsung ke folder dokumen</p></div><div class="arrow">›</div>
-   </a>
-   <div class="sidebox help" id="contact">
-    <h4>Contact Person</h4>
-    <p style="margin-top:8px"><strong style="display:block;color:#102b49;font-size:11px">Silpia Ardiya Garini</strong><span style="display:block;margin-top:3px">Dept. Engineering Plan</span></p>
-    <p style="margin-top:8px"><a href="mailto:Maintenance.ptui@univance.co.id" style="color:#1477c9;font-weight:800;word-break:break-word">Maintenance.ptui@univance.co.id</a></p>
-   </div>
-   <div class="sidebox quote"><strong>“Good Maintenance<br>Builds a Great Future”</strong><small>— Maintenance Team</small></div>
-   <div class="sidebox stats">
-    <div class="stat"><div class="sicon">◷</div><div><b>Akses Cepat</b><span>Dokumen selalu tersedia kapan saja, di mana saja.</span></div></div>
-    <div class="stat"><div class="sicon">✓</div><div><b>Tertata & Terpercaya</b><span>Informasi resmi dari PT. Univance Indonesia.</span></div></div>
-    <div class="stat"><div class="sicon">◎</div><div><b>Dukung Produksi</b><span>Bersama jaga kinerja mesin dan kelancaran produksi.</span></div></div>
-   </div>
-   <div class="sidebox qrbox">
-    <img class="qr" alt="QR Code Maintenance Dojo" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=https%3A%2F%2Fsilpiaardiya-cpu.github.io%2F">
-    <div class="qrtext"><b>Scan QR</b><p>Buka Maintenance Dojo langsung dari HP.</p></div>
-   </div>
-  </aside>
- </div>
+<div class="footer">Maintenance Area • PT. Univance Indonesia<div class="contact">Contact: Silpia Ardiya Garini • Dept. Engineering Plan • <a href="mailto:Maintenance.ptui@univance.co.id">Maintenance.ptui@univance.co.id</a></div></div>
+</div>
 </main>
-
-<footer class="footer">
- <div class="container footer-row">
-  <div class="footer-brand">
-   <svg class="mark" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="square"/></svg>
-   <div><b>PT. UNIVANCE INDONESIA</b><span>Better Technology for a Brighter Future</span></div>
-  </div>
-  <div class="footer-links"><a href="#home">Home</a><a href="maintenance.html">Document Center</a><a href="sparepart.html">Spare Part Warehouse</a><a href="schedule.html">Schedule Pendidikan</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-  <div class="copyright">Maintenance Dojo • Digital Document Center<br>Last Update: 23 Sep 2026</div>
- </div>
-</footer>
-
-
-<script>
-const searchInputs=[document.getElementById('docSearch'),document.getElementById('topSearch')];
-const cards=[...document.querySelectorAll('.card')];
-function filterCards(q){
- q=(q||'').toLowerCase().trim();
- cards.forEach(c=>{c.style.display=(!q||c.dataset.name.includes(q))?'flex':'none'});
-}
-searchInputs.forEach(input=>input&&input.addEventListener('input',e=>{
- if(input===document.getElementById('topSearch')) document.getElementById('docSearch').value=e.target.value;
- else document.getElementById('topSearch').value=e.target.value;
- filterCards(e.target.value);
-}));
-
-const scheduleModal=document.getElementById('scheduleModal');
-const scheduleForm=document.getElementById('scheduleLoginForm');
-const scheduleUser=document.getElementById('scheduleUser');
-const schedulePass=document.getElementById('schedulePass');
-const scheduleError=document.getElementById('scheduleError');
-const scheduleCancel=document.getElementById('scheduleCancel');
-let scheduleTarget='schedule.html';
-
-function openScheduleLogin(event){
- if(event) event.preventDefault();
- scheduleTarget='schedule.html';
- scheduleError.style.display='none';
- scheduleUser.value='';
- schedulePass.value='';
- scheduleModal.classList.add('show');
- scheduleModal.setAttribute('aria-hidden','false');
- setTimeout(()=>scheduleUser.focus(),80);
-}
-document.querySelectorAll('a[href="schedule.html"]').forEach(link=>link.addEventListener('click',openScheduleLogin));
-scheduleCancel.addEventListener('click',()=>{
- scheduleModal.classList.remove('show');
- scheduleModal.setAttribute('aria-hidden','true');
-});
-scheduleModal.addEventListener('click',e=>{if(e.target===scheduleModal)scheduleCancel.click()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&scheduleModal.classList.contains('show'))scheduleCancel.click()});
-
-scheduleForm.addEventListener('submit',e=>{
- e.preventDefault();
- if(scheduleUser.value.trim()==='Maintenance' && schedulePass.value==='12345'){
-   sessionStorage.setItem('scheduleAccess','granted');
-   window.location.href=scheduleTarget;
- }else{
-   scheduleError.style.display='block';
-   schedulePass.value='';
-   schedulePass.focus();
- }
-});
-</script>
 </body>
 </html>
