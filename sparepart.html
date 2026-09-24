@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071f3a">
+<title>Spare Part Warehouse | Maintenance Dojo</title>
+<style>
+:root{--navy:#071f3a;--navy2:#0b3156;--orange:#f47721;--blue:#1477c9;--green:#14a889;--red:#d63b3b;--ink:#102b49;--muted:#667b91;--line:#dfe7ef;--bg:#f3f6f9;--white:#fff;--yellow:#f0a400}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}a{text-decoration:none;color:inherit}.container{width:min(1400px,94%);margin:auto}
+.header{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;z-index:50}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px}.logo{width:40px;color:var(--orange)}.brand b{display:block;font-size:15px}.brand span{font-size:9px;font-style:italic;font-weight:700;color:#60758b}.back{font-size:11px;font-weight:800;padding:10px 14px;border:1px solid var(--line);border-radius:20px}.back:hover{color:var(--orange)}
+.hero{background:linear-gradient(115deg,#061d35,#0a3b61);color:#fff;padding:34px 0;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:430px;height:430px;border:70px solid #ffffff0c;border-radius:50%;right:-160px;top:-230px}.eyebrow{display:inline-block;color:#ffc58e;font-size:10px;font-weight:900;letter-spacing:2px;border:1px solid #ffffff25;border-radius:20px;padding:8px 12px}.hero h1{font-size:39px;margin:13px 0 6px}.hero h1 em{font-style:normal;color:var(--orange)}.hero p{max-width:850px;color:#d4e3ef;font-size:12px;line-height:1.7;margin:0}
+.main{padding:25px 0 50px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;align-items:center;gap:12px;box-shadow:0 5px 18px #17324b09}.stat .ico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:#fff3e9;color:var(--orange);font-size:19px}.stat b{font-size:19px;display:block}.stat span{font-size:9px;color:var(--muted);display:block;margin-top:2px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 7px 25px #17324b0a;padding:18px;margin-bottom:16px}.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:15px}.search{height:40px;flex:1;min-width:240px;border:1px solid #d7e1ea;border-radius:21px;display:flex;align-items:center;padding:0 13px}.search input{border:0;outline:0;width:100%;font-size:11px}.select{height:40px;border:1px solid #d7e1ea;border-radius:9px;padding:0 10px;font-size:10px;color:var(--ink);background:#fff}.btn{height:40px;border:0;border-radius:9px;padding:0 14px;font-size:10px;font-weight:900;cursor:pointer}.btn.primary{background:var(--orange);color:#fff}.btn.blue{background:#eaf5ff;color:var(--blue);border:1px solid #cfe5f7}.btn.green{background:#eafaf6;color:#0c8e74;border:1px solid #c9eee4}.btn.gray{background:#fff;border:1px solid var(--line);color:#526a81}.btn:hover{filter:brightness(.97);transform:translateY(-1px)}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:11px}.table{width:100%;border-collapse:collapse;min-width:980px}.table th{background:#f7fafc;color:#526a81;font-size:9px;text-transform:uppercase;letter-spacing:.5px;text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);white-space:nowrap}.table td{font-size:10px;padding:11px 10px;border-bottom:1px solid #edf1f5;vertical-align:middle}.table tr:last-child td{border-bottom:0}.table tbody tr:hover{background:#fbfdff}.part-code{font-weight:900;color:var(--navy)}.part-name{font-weight:800}.muted{color:var(--muted)}.stock{font-weight:950;font-size:13px}.stock.low{color:var(--red)}.stock.ok{color:#0b9278}.badge{display:inline-flex;padding:4px 7px;border-radius:12px;background:#f3f6f9;font-size:8px;font-weight:900}.badge.low{background:#fff0f0;color:var(--red)}.badge.ok{background:#eafaf6;color:#0b9278}.rack{font-weight:900;background:#eef5fb;border:1px solid #d9e7f3;border-radius:7px;padding:5px 7px;display:inline-block}.actions{display:flex;gap:5px}.act{width:30px;height:30px;border:1px solid var(--line);background:#fff;border-radius:7px;cursor:pointer;font-weight:900}.act:hover{background:#f4f8fb}.empty{display:none;text-align:center;padding:35px;color:var(--muted);font-size:11px}
+.modal{position:fixed;inset:0;background:#041222b8;backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:18px;z-index:100}.modal.show{display:flex}.modal-box{width:min(620px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:17px;padding:22px;box-shadow:0 25px 80px #0007}.modal-box h3{margin:0;font-size:20px}.modal-box>p{font-size:10px;color:var(--muted);margin:5px 0 18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:9px;font-weight:900;margin-bottom:5px;color:#526a81}.field input,.field select{width:100%;height:40px;border:1px solid #d7e1ea;border-radius:8px;padding:0 10px;font-size:11px;outline:none;background:#fff}.field input:focus,.field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1477c915}.full{grid-column:1/-1}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}
+.note{font-size:9px;color:var(--muted);line-height:1.55;margin-top:12px}.note b{color:var(--ink)}
+.footer{background:var(--navy);color:#9eb3c8;text-align:center;padding:18px;font-size:9px}
+@media(max-width:900px){.stats{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}}@media(max-width:520px){.header{height:auto;padding:13px 0}.nav{align-items:flex-start}.brand b{font-size:12px}.hero h1{font-size:31px}.stats{grid-template-columns:1fr}.search{min-width:100%}}
+</style>
+</head>
+<body>
+<header class="header"><div class="container nav">
+<a class="brand" href="index.html"><svg class="logo" viewBox="0 0 48 48"><path d="M15 8v18a9 9 0 1 0 18 0V8" fill="none" stroke="currentColor" stroke-width="6"/><path d="M8 17h12M28 17h12M12 31 7 36M35 9l6-5" fill="none" stroke="currentColor" stroke-width="5"/></svg><div><b>PT. UNIVANCE INDONESIA</b><span>Better Technology for a Brighter Future</span></div></a>
+<a class="back" href="index.html">← Kembali ke Maintenance Dojo</a></div></header>
+
+<section class="hero"><div class="container"><span class="eyebrow">MAINTENANCE DOJO • WAREHOUSE</span><h1>Spare Part <em>Warehouse</em></h1><p>Database spare part gudang maintenance untuk melihat kode part, nama part, kategori, jumlah stock, minimum stock, dan lokasi penyimpanan di rak. Data dapat ditambah, diedit, dicari, difilter, diimpor, dan diekspor.</p></div></section>
+
+<main class="main"><div class="container">
+<div class="stats">
+<div class="stat"><div class="ico">▣</div><div><b id="totalParts">0</b><span>Jenis Spare Part</span></div></div>
+<div class="stat"><div class="ico">#</div><div><b id="totalStock">0</b><span>Total Quantity</span></div></div>
+<div class="stat"><div class="ico">⌂</div><div><b id="totalRacks">0</b><span>Lokasi Rak</span></div></div>
+<div class="stat"><div class="ico">!</div><div><b id="lowStock">0</b><span>Perlu Restock</span></div></div>
+</div>
+
+<section class="panel">
+<div class="toolbar">
+<label class="search">⌕ <input id="search" placeholder="Cari part number, nama part, merk, atau lokasi rak..."></label>
+<select class="select" id="categoryFilter"><option value="">Semua Kategori</option></select>
+<select class="select" id="stockFilter"><option value="">Semua Stock</option><option value="low">Perlu Restock</option><option value="ok">Stock Aman</option></select>
+<button class="btn primary" id="addBtn">＋ Tambah Part</button>
+<button class="btn green" id="exportBtn">↓ Export CSV</button>
+<label class="btn blue" style="display:inline-flex;align-items:center;cursor:pointer">↑ Import CSV<input id="importFile" type="file" accept=".csv,text/csv" hidden></label>
+</div>
+<div class="table-wrap">
+<table class="table"><thead><tr><th>Part Number</th><th>Nama Spare Part</th><th>Kategori</th><th>Merk / Model</th><th>Stock</th><th>Min.</th><th>Status</th><th>Lokasi Rak</th><th>Update</th><th>Aksi</th></tr></thead>
+<tbody id="tbody"></tbody></table>
+<div class="empty" id="empty">Data spare part tidak ditemukan.</div>
+</div>
+<div class="note"><b>Catatan:</b> Versi GitHub Pages ini menyimpan perubahan di browser menggunakan LocalStorage. Jadi data edit/tambah hanya tersimpan pada perangkat dan browser yang digunakan. Gunakan Export CSV untuk backup. Jika database harus dipakai bersama oleh beberapa user/PC secara real-time, tahap berikutnya adalah menghubungkan halaman ini ke Google Sheets, Firebase, Supabase, atau database server.</div>
+</section>
+</div></main>
+
+<div class="modal" id="modal"><div class="modal-box">
+<h3 id="modalTitle">Tambah Spare Part</h3><p>Isi informasi spare part dan lokasi penyimpanan.</p>
+<form id="partForm"><input type="hidden" id="editIndex">
+<div class="form-grid">
+<div class="field"><label>PART NUMBER *</label><input id="partNumber" required placeholder="Contoh: BRG-6205"></div>
+<div class="field"><label>NAMA SPARE PART *</label><input id="partName" required placeholder="Contoh: Bearing 6205"></div>
+<div class="field"><label>KATEGORI</label><input id="category" placeholder="Mechanical / Electrical / Pneumatic"></div>
+<div class="field"><label>MERK / MODEL</label><input id="brand" placeholder="SKF / Omron / SMC..."></div>
+<div class="field"><label>STOCK SAAT INI *</label><input id="stock" type="number" min="0" step="1" required value="0"></div>
+<div class="field"><label>MINIMUM STOCK</label><input id="minStock" type="number" min="0" step="1" value="0"></div>
+<div class="field"><label>LOKASI RAK *</label><input id="rack" required placeholder="Contoh: R-A01 / B-03"></div>
+<div class="field"><label>UNIT</label><input id="unit" value="pcs" placeholder="pcs, set, meter, box"></div>
+<div class="field full"><label>KETERANGAN</label><input id="noteField" placeholder="Ukuran, spesifikasi, atau catatan lain"></div>
+</div>
+<div class="modal-actions"><button type="button" class="btn gray" id="cancelBtn">Batal</button><button class="btn primary" type="submit">Simpan Data</button></div>
+</form></div></div>
+
+<footer class="footer">Spare Part Warehouse • Maintenance Dojo • PT. Univance Indonesia</footer>
+<script>
+const KEY='maintenance_spareparts_v1';
+const seed=[
+ {partNumber:'BRG-6205',partName:'Bearing 6205',category:'Mechanical',brand:'SKF',stock:12,minStock:5,rack:'R-A01',unit:'pcs',note:'Deep groove bearing'},
+ {partNumber:'BRG-6206',partName:'Bearing 6206',category:'Mechanical',brand:'NSK',stock:4,minStock:5,rack:'R-A01',unit:'pcs',note:'Deep groove bearing'},
+ {partNumber:'MCB-2P-10A',partName:'MCB 2 Pole 10A',category:'Electrical',brand:'Schneider',stock:8,minStock:3,rack:'R-B02',unit:'pcs',note:''},
+ {partNumber:'SOL-1/4',partName:'Solenoid Valve 1/4"',category:'Pneumatic',brand:'SMC',stock:6,minStock:2,rack:'R-C03',unit:'pcs',note:''},
+ {partNumber:'SEAL-40X55',partName:'Oil Seal 40x55x8',category:'Mechanical',brand:'NOK',stock:2,minStock:4,rack:'R-A04',unit:'pcs',note:''}
+];
+let data=[];
+try{data=JSON.parse(localStorage.getItem(KEY)||'null')||seed}catch(e){data=seed}
+const $=id=>document.getElementById(id);
+const tbody=$('tbody'), modal=$('modal'), form=$('partForm');
+function save(){localStorage.setItem(KEY,JSON.stringify(data))}
+function fmt(n){return Number(n||0).toLocaleString('id-ID')}
+function refreshCategories(){const cats=[...new Set(data.map(x=>(x.category||'').trim()).filter(Boolean))].sort();const old=$('categoryFilter').value;$('categoryFilter').innerHTML='<option value="">Semua Kategori</option>'+cats.map(c=>'<option>'+escapeHtml(c)+'</option>').join('');$('categoryFilter').value=cats.includes(old)?old:''}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function render(){
+ refreshCategories();
+ const q=$('search').value.toLowerCase().trim(), cat=$('categoryFilter').value, sf=$('stockFilter').value;
+ const filtered=data.map((x,i)=>({x,i})).filter(({x})=>{
+  const text=[x.partNumber,x.partName,x.category,x.brand,x.rack,x.note].join(' ').toLowerCase();
+  const low=Number(x.stock)<=Number(x.minStock);
+  return (!q||text.includes(q))&&(!cat||x.category===cat)&&(!sf||(sf==='low'?low:!low));
+ });
+ tbody.innerHTML=filtered.map(({x,i})=>{
+  const low=Number(x.stock)<=Number(x.minStock);
+  return '<tr><td><span class="part-code">'+escapeHtml(x.partNumber)+'</span></td><td><span class="part-name">'+escapeHtml(x.partName)+'</span><br><span class="muted">'+escapeHtml(x.note||'')+'</span></td><td><span class="badge">'+escapeHtml(x.category||'-')+'</span></td><td>'+escapeHtml(x.brand||'-')+'</td><td><span class="stock '+(low?'low':'ok')+'">'+fmt(x.stock)+' '+escapeHtml(x.unit||'pcs')+'</span></td><td>'+fmt(x.minStock)+'</td><td><span class="badge '+(low?'low':'ok')+'">'+(low?'RESTOCK':'AMAN')+'</span></td><td><span class="rack">'+escapeHtml(x.rack)+'</span></td><td class="muted">'+escapeHtml(x.updated||'-')+'</td><td><div class="actions"><button class="act" title="Edit" onclick="editPart('+i+')">✎</button><button class="act" title="Hapus" onclick="deletePart('+i+')">×</button></div></td></tr>'
+ }).join('');
+ $('empty').style.display=filtered.length?'none':'block';
+ $('totalParts').textContent=fmt(data.length);$('totalStock').textContent=fmt(data.reduce((s,x)=>s+Number(x.stock||0),0));$('totalRacks').textContent=new Set(data.map(x=>x.rack).filter(Boolean)).size;$('lowStock').textContent=fmt(data.filter(x=>Number(x.stock)<=Number(x.minStock)).length);
+}
+function openAdd(){form.reset();$('editIndex').value='';$('stock').value=0;$('minStock').value=0;$('unit').value='pcs';$('modalTitle').textContent='Tambah Spare Part';modal.classList.add('show');setTimeout(()=>$('partNumber').focus(),50)}
+function editPart(i){const x=data[i];$('editIndex').value=i;['partNumber','partName','category','brand','stock','minStock','rack','unit','noteField'].forEach(k=>$(k).value=x[k]??'');$('modalTitle').textContent='Edit Spare Part';modal.classList.add('show')}
+function deletePart(i){if(confirm('Hapus data '+data[i].partNumber+'?')){data.splice(i,1);save();render()}}
+function today(){return new Intl.DateTimeFormat('id-ID',{day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date())}
+form.addEventListener('submit',e=>{e.preventDefault();const obj={partNumber:$('partNumber').value.trim(),partName:$('partName').value.trim(),category:$('category').value.trim(),brand:$('brand').value.trim(),stock:Number($('stock').value||0),minStock:Number($('minStock').value||0),rack:$('rack').value.trim(),unit:$('unit').value.trim()||'pcs',note:$('noteField').value.trim(),updated:today()};const idx=$('editIndex').value;if(idx==='')data.push(obj);else data[Number(idx)]=obj;save();modal.classList.remove('show');render()});
+$('addBtn').onclick=openAdd;$('cancelBtn').onclick=()=>modal.classList.remove('show');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('show')});
+[$('search'),$('categoryFilter'),$('stockFilter')].forEach(el=>el.addEventListener('input',render));$('categoryFilter').addEventListener('change',render);$('stockFilter').addEventListener('change',render);
+function csvEscape(v){return '"'+String(v??'').replace(/"/g,'""')+'"'}
+$('exportBtn').onclick=()=>{const headers=['partNumber','partName','category','brand','stock','minStock','rack','unit','note','updated'];const csv=[headers.join(','),...data.map(x=>headers.map(h=>csvEscape(x[h])).join(','))].join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='spare-part-warehouse.csv';a.click();URL.revokeObjectURL(a.href)};
+$('importFile').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const rows=parseCSV(reader.result);if(rows.length<2)throw Error('CSV kosong');const headers=rows[0].map(x=>x.trim());const required=['partNumber','partName','stock','rack'];if(!required.every(h=>headers.includes(h)))throw Error('Kolom wajib: partNumber, partName, stock, rack');const imported=rows.slice(1).filter(r=>r.some(v=>v.trim())).map(r=>{const o={};headers.forEach((h,i)=>o[h]=r[i]??'');o.stock=Number(o.stock||0);o.minStock=Number(o.minStock||0);o.unit=o.unit||'pcs';o.updated=today();return o});if(confirm('Import '+imported.length+' data dan mengganti database saat ini?')){data=imported;save();render();alert('Import berhasil.')}}catch(err){alert('Gagal import: '+err.message)}e.target.value=''};reader.readAsText(file,'UTF-8')});
+function parseCSV(text){const rows=[];let row=[],cell='',quote=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'&&quote&&n==='"'){cell+='"';i++;continue}if(c==='"'){quote=!quote;continue}if(c===','&&!quote){row.push(cell);cell='';continue}if((c==='\n'||c==='\r')&&!quote){if(c==='\r'&&n==='\n')i++;row.push(cell);rows.push(row);row=[];cell='';continue}cell+=c}if(cell||row.length){row.push(cell);rows.push(row)}return rows}
+render();
+</script>
+</body>
+</html>
